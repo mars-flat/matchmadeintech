@@ -17,9 +17,11 @@ import dotenv
 app = Flask(__name__)
 CORS(app)
 
-dotenv_path = join(dirname(__file__), '.env')
-load_dotenv(dotenv_path)
-PA_TOKEN = dotenv.get_key(dotenv_path, 'PA_TOKEN')
+# dotenv_path = join(dirname(__file__), '.env')
+# load_dotenv(dotenv_path)
+# PA_TOKEN = dotenv.get_key(dotenv_path, 'PA_TOKEN')
+
+PA_TOKEN = os.environ.get("PA_TOKEN")
 
 headers = {
     "Authorization": f"Bearer {PA_TOKEN}",
